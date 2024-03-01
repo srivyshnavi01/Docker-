@@ -1,0 +1,12 @@
+version: '3.8'
+
+services:
+  assignment-webserver:
+    image: atvenu/assignment-webserver:latest
+    ports:
+      - "9090:8080"
+    environment:
+      - BORDER_COLOR=blue
+    volumes:
+      - ./data.csv:/app/data.csv
+
