@@ -1,0 +1,7 @@
+chmod +x csv.sh	
+
+chmod 777 data.csv
+
+docker run -d -v "$(pwd)/data.csv:/app/data.csv" atvenu/assignment-webserver:latest
+
+docker run -d -p 9090:8080 -e BORDER_COLOR=blue -v "$(pwd)/data.csv:/app/data.csv" atvenu/assignment-webserver:latest
